@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Jun Zhai - PhD student in Mathematics. Lean-style personal research page.">
-  <title>Jun Zhai - Home.lean</title>
+  <title>Jun Zhai's Site</title>
 
   <meta property="og:title" content="Jun Zhai - PhD student in Mathematics">
   <meta property="og:description" content="Lean-style personal research page.">
@@ -35,7 +35,7 @@
     <header class="file-bar">
       <div class="file-left">
         <div class="file-name">home.lean</div>
-        <div class="file-meta">lean 4 | infoview</div>
+        <div class="file-meta">do: #cv #github #linkedin #email #orcid #transition</div>
       </div>
       <img class="mini-portrait" src="/files/profile.jpg" alt="Jun Zhai portrait">
     </header>
@@ -43,12 +43,6 @@
     <main class="workspace">
       <section class="code-window" aria-label="Lean file">
         <div class="code-lines">
-          <div class="line">/--</div>
-          <div class="line">Home.lean</div>
-          <div class="line">Personal research file for Jun Zhai</div>
-          <div class="line">--/</div>
-          <div class="line spacer">&nbsp;</div>
-
           <div class="line"><span class="kw">import</span> Mathlib</div>
           <div class="line"><span class="kw">open</span> scoped Classical</div>
           <div class="line spacer">&nbsp;</div>
@@ -57,27 +51,29 @@
           <div class="line spacer">&nbsp;</div>
 
           <div class="line"><span class="kw">structure</span> Profile <span class="kw">where</span></div>
-          <div class="line">  name : String</div>
-          <div class="line">  role : String</div>
-          <div class="line">  focus : String</div>
-          <div class="line">  affiliation : String</div>
+          <div class="line">  name role focus affiliation : String</div>
+          <div class="line spacer">&nbsp;</div>
+
+          <div class="line">/--</div>
+          <div class="line">Personal info</div>
+          <div class="line">--/</div>
           <div class="line spacer">&nbsp;</div>
 
           <div class="line"><span class="kw">def</span> me : Profile :=</div>
           <div class="line">  { name := <span class="str">"Jun Zhai"</span></div>
           <div class="line">    role := <span class="str">"PhD student, Mathematics"</span></div>
           <div class="line">    focus := <span class="str">"AI4Math"</span></div>
-          <div class="line">    affiliation := <span class="str">"National University of Singapore"</span></div>
+          <div class="line wrap">    affiliation := <span class="str">"National University of Singapore"</span></div>
           <div class="line">  }</div>
           <div class="line spacer">&nbsp;</div>
 
           <div class="line"><span class="kw">end</span> Jun</div>
           <div class="line spacer">&nbsp;</div>
 
-          <div class="line"><span class="directive">#eval</span> <span class="str">"cv: /files/JUN_ZHAI_CV.pdf"</span></div>
-          <div class="line"><span class="directive">#eval</span> <span class="str">"linkedin: https://www.linkedin.com"</span></div>
-          <div class="line"><span class="directive">#eval</span> <span class="str">"email: zhai@nus.edu.sg"</span></div>
-          <div class="line"><span class="directive">#eval</span> <span class="str">"orcid: 0009-0005-0627-0970"</span></div>
+          <div class="line editable" contenteditable="true" spellcheck="false" data-command-line></div>
+          <div class="line editable" contenteditable="true" spellcheck="false" data-command-line></div>
+          <div class="line editable" contenteditable="true" spellcheck="false" data-command-line></div>
+          <div class="line editable" contenteditable="true" spellcheck="false" data-command-line></div>
           <div class="line spacer">&nbsp;</div>
 
           <div class="line"><span class="comment">/-- last_update: 2025-01-07 --/</span></div>
@@ -85,19 +81,25 @@
       </section>
 
       <aside class="infoview" aria-label="Lean InfoView">
-        <div class="infoview-section">
-          <button class="infoview-title" type="button" aria-expanded="true" aria-controls="infoview-home">home.lean</button>
-          <div class="infoview-body" id="infoview-home">
-            <div class="infoview-line">No goals.</div>
-          </div>
-        </div>
-        <div class="infoview-section">
-          <button class="infoview-title" type="button" aria-expanded="true" aria-controls="infoview-messages">Messages</button>
-          <div class="infoview-body" id="infoview-messages">
-            <div class="message"><span class="tag">info</span> cv: /files/JUN_ZHAI_CV.pdf</div>
-            <div class="message"><span class="tag">info</span> linkedin: https://www.linkedin.com</div>
-            <div class="message"><span class="tag">info</span> email: zhai@nus.edu.sg</div>
-            <div class="message"><span class="tag">info</span> orcid: 0009-0005-0627-0970</div>
+        <div class="infoview-header">InfoView</div>
+        <div class="infoview-list">
+          <div class="infoview-group" data-foldable>
+            <button class="fold-toggle infoview-title" type="button" aria-expanded="true" aria-controls="infoview-home">home.lean</button>
+            <div class="fold-body" id="infoview-home">
+              <div class="infoview-group nested" data-foldable>
+                <button class="fold-toggle infoview-subtitle" type="button" aria-expanded="true" aria-controls="infoview-tactic">Tactic State</button>
+                <div class="fold-body" id="infoview-tactic">
+                  <div class="infoview-line">human AI : Mathematician<br>⊢ AI &gt; human</div>
+                </div>
+              </div>
+              <div class="infoview-group nested" data-foldable>
+                <button class="fold-toggle infoview-subtitle" type="button" aria-expanded="true" aria-controls="infoview-messages">Messages</button>
+                <div class="fold-body" id="infoview-messages">
+                  <div class="infoview-line" id="messagesEmpty">No Messages.</div>
+                  <div id="messagesList" class="messages-list"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </aside>
@@ -105,9 +107,10 @@
   </div>
 
   <script>
-    document.querySelectorAll(".infoview-section").forEach((section) => {
-      const title = section.querySelector(".infoview-title");
-      const body = section.querySelector(".infoview-body");
+    const foldableSections = document.querySelectorAll("[data-foldable]");
+    foldableSections.forEach((section) => {
+      const title = section.querySelector(".fold-toggle");
+      const body = section.querySelector(".fold-body");
       if (!title || !body) {
         return;
       }
@@ -117,6 +120,354 @@
       });
       title.setAttribute("aria-expanded", "true");
     });
+
+    const lineContainer = document.querySelector(".code-lines");
+    const maxLines = 100;
+    const messagesList = document.getElementById("messagesList");
+    const messagesEmpty = document.getElementById("messagesEmpty");
+    const executed = new Map();
+    const scheduled = new Map();
+    const caretPositions = new Map();
+    let activeLine = null;
+
+    const commandMap = {
+      "#cv": {
+        message: "cv: /files/JUN_ZHAI_CV.pdf",
+        open: "/files/JUN_ZHAI_CV.pdf"
+      },
+      "#github": {
+        message: "github: github.com/Jun2028",
+        open: "https://github.com/Jun2028"
+      },
+      "#linkedin": {
+        message: "linkedin: linkedin.com/in/zhai-jun-b9b52b1b9",
+        open: "https://www.linkedin.com/in/zhai-jun-b9b52b1b9"
+      },
+      "#email": {
+        message: "email: zhai@nus.edu.sg"
+      },
+      "#orcid": {
+        message: "orcid: 0009-0005-0627-0970"
+      },
+      "#transition": {
+        message: "I made the transition from pure math to AI in Sep 2025. I have since become a more powerful being."
+      },
+      "#sound": {
+        message: "sound: chinese small tom",
+        sound: true
+      },
+      "#crash": {
+        message: "crash: oops",
+        open: "/this-page-does-not-exist",
+        sameTab: true
+      }
+    };
+
+    let audioCtx = null;
+
+    const ensureAudio = () => {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) {
+          return null;
+        }
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    };
+
+    const playTom = () => {
+      const ctx = ensureAudio();
+      if (!ctx) {
+        return;
+      }
+      const now = ctx.currentTime;
+      const hitSpacing = 0.22;
+      const hitCount = 4;
+
+      const makeHit = (time, baseFreq) => {
+        const osc = ctx.createOscillator();
+        const oscGain = ctx.createGain();
+        const noiseGain = ctx.createGain();
+        const noiseFilter = ctx.createBiquadFilter();
+
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(baseFreq, time);
+        osc.frequency.exponentialRampToValueAtTime(baseFreq * 0.55, time + 0.18);
+        oscGain.gain.setValueAtTime(0.0001, time);
+        oscGain.gain.exponentialRampToValueAtTime(0.7, time + 0.015);
+        oscGain.gain.exponentialRampToValueAtTime(0.0001, time + 0.6);
+
+        noiseFilter.type = "bandpass";
+        noiseFilter.frequency.setValueAtTime(520, time);
+        noiseFilter.Q.setValueAtTime(0.9, time);
+        noiseGain.gain.setValueAtTime(0.0001, time);
+        noiseGain.gain.exponentialRampToValueAtTime(0.25, time + 0.01);
+        noiseGain.gain.exponentialRampToValueAtTime(0.0001, time + 0.12);
+
+        const bufferSize = Math.floor(ctx.sampleRate * 0.25);
+        const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const noiseData = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i += 1) {
+          noiseData[i] = Math.random() * 2 - 1;
+        }
+        const noise = ctx.createBufferSource();
+        noise.buffer = noiseBuffer;
+
+        osc.connect(oscGain).connect(ctx.destination);
+        noise.connect(noiseFilter).connect(noiseGain).connect(ctx.destination);
+
+        osc.start(time);
+        noise.start(time);
+        osc.stop(time + 0.7);
+        noise.stop(time + 0.2);
+      };
+
+      for (let i = 0; i < hitCount; i += 1) {
+        const time = now + i * hitSpacing;
+        const freq = 220 - i * 10;
+        makeHit(time, freq);
+      }
+    };
+
+    const addMessage = (text) => {
+      if (messagesEmpty) {
+        messagesEmpty.style.display = "none";
+      }
+      const line = document.createElement("div");
+      line.className = "message";
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = "info";
+      line.appendChild(tag);
+      line.append(` ${text}`);
+      messagesList?.appendChild(line);
+    };
+
+    const clearScheduled = (lineEl) => {
+      const pending = scheduled.get(lineEl);
+      if (pending) {
+        clearTimeout(pending);
+        scheduled.delete(lineEl);
+      }
+    };
+
+    const runCommand = (lineEl) => {
+      const raw = lineEl.textContent || "";
+      const trimmed = raw.trim();
+      if (!trimmed) {
+        clearScheduled(lineEl);
+        executed.delete(lineEl);
+        lineEl.classList.remove("is-command");
+        return;
+      }
+      const token = trimmed.split(/\s+/)[0];
+      if (trimmed !== token || !token.startsWith("#")) {
+        clearScheduled(lineEl);
+        executed.delete(lineEl);
+        lineEl.classList.remove("is-command");
+        return;
+      }
+      const entry = commandMap[token];
+      if (!entry) {
+        clearScheduled(lineEl);
+        executed.delete(lineEl);
+        lineEl.classList.remove("is-command");
+        return;
+      }
+      lineEl.classList.add("is-command");
+      if (executed.get(lineEl) === token) {
+        return;
+      }
+      executed.set(lineEl, token);
+      clearScheduled(lineEl);
+      const timeoutId = setTimeout(() => {
+        addMessage(entry.message);
+        if (entry.open) {
+          if (entry.sameTab) {
+            window.location.href = entry.open;
+          } else {
+            window.open(entry.open, "_blank", "noopener");
+          }
+        }
+        if (entry.sound) {
+          playTom();
+        }
+      }, 1000);
+      scheduled.set(lineEl, timeoutId);
+    };
+
+    const getCaretOffset = (lineEl) => {
+      const selection = window.getSelection();
+      if (!selection || selection.rangeCount === 0) {
+        return (lineEl.textContent || "").length;
+      }
+      const range = selection.getRangeAt(0);
+      if (!lineEl.contains(range.startContainer)) {
+        return (lineEl.textContent || "").length;
+      }
+      const preRange = range.cloneRange();
+      preRange.selectNodeContents(lineEl);
+      preRange.setEnd(range.startContainer, range.startOffset);
+      return preRange.toString().length;
+    };
+
+    const setCaret = (lineEl, offset) => {
+      if (!lineEl.firstChild) {
+        lineEl.appendChild(document.createTextNode(""));
+      }
+      const node = lineEl.firstChild;
+      const length = node.textContent.length;
+      const range = document.createRange();
+      const selection = window.getSelection();
+      range.setStart(node, Math.min(offset, length));
+      range.collapse(true);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    };
+
+    const updateCaret = (lineEl, offsetOverride) => {
+      const offset = Number.isInteger(offsetOverride)
+        ? offsetOverride
+        : getCaretOffset(lineEl);
+      caretPositions.set(lineEl, offset);
+      lineEl.style.setProperty("--caret-col", offset);
+    };
+
+    const activateLine = (lineEl, offsetOverride) => {
+      if (activeLine && activeLine !== lineEl) {
+        activeLine.classList.remove("is-active");
+      }
+      activeLine = lineEl;
+      lineEl.classList.add("is-active");
+      const fallback = (lineEl.textContent || "").length;
+      const offset = Number.isInteger(offsetOverride)
+        ? offsetOverride
+        : (caretPositions.get(lineEl) ?? fallback);
+      lineEl.focus();
+      setCaret(lineEl, offset);
+      updateCaret(lineEl, offset);
+    };
+
+    const findPrevEditable = (lineEl) => {
+      let prev = lineEl.previousElementSibling;
+      while (prev) {
+        if (prev.classList.contains("line") && prev.classList.contains("editable")) {
+          return prev;
+        }
+        prev = prev.previousElementSibling;
+      }
+      return null;
+    };
+
+    const findNextEditable = (lineEl) => {
+      let next = lineEl.nextElementSibling;
+      while (next) {
+        if (next.classList.contains("line") && next.classList.contains("editable")) {
+          return next;
+        }
+        next = next.nextElementSibling;
+      }
+      return null;
+    };
+
+    const attachEditable = (lineEl) => {
+      lineEl.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        const col = caretPositions.get(lineEl) ?? 0;
+        activateLine(lineEl, col);
+      });
+      lineEl.addEventListener("pointerup", (event) => {
+        event.preventDefault();
+        const col = caretPositions.get(lineEl) ?? 0;
+        activateLine(lineEl, col);
+      });
+      lineEl.addEventListener("focus", () => {
+        activateLine(lineEl);
+      });
+      lineEl.addEventListener("input", () => {
+        runCommand(lineEl);
+        updateCaret(lineEl);
+      });
+      lineEl.addEventListener("keydown", (event) => {
+        if (event.key.length === 1 || event.key === "Backspace" || event.key.startsWith("Arrow")) {
+          ensureAudio();
+        }
+        if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+          event.preventDefault();
+          const target = event.key === "ArrowUp"
+            ? findPrevEditable(lineEl)
+            : findNextEditable(lineEl);
+          if (target) {
+            const col = caretPositions.get(lineEl) ?? getCaretOffset(lineEl);
+            activateLine(target, Math.min(col, (target.textContent || "").length));
+          }
+          return;
+        }
+        if (event.key === "Backspace") {
+          const offset = getCaretOffset(lineEl);
+          if (offset === 0) {
+            event.preventDefault();
+            const prev = findPrevEditable(lineEl);
+            if (prev) {
+              const prevText = prev.textContent || "";
+              const currText = lineEl.textContent || "";
+              clearScheduled(lineEl);
+              executed.delete(lineEl);
+              scheduled.delete(lineEl);
+              caretPositions.delete(lineEl);
+              lineEl.remove();
+              prev.textContent = `${prevText}${currText}`;
+              runCommand(prev);
+              activateLine(prev, prevText.length);
+            }
+          }
+          return;
+        }
+        if (event.key !== "Enter") {
+          return;
+        }
+        event.preventDefault();
+        const totalLines = lineContainer.querySelectorAll(".line").length;
+        if (totalLines >= maxLines) {
+          return;
+        }
+        const text = lineEl.textContent || "";
+        const offset = getCaretOffset(lineEl);
+        const before = text.slice(0, offset);
+        const after = text.slice(offset);
+        lineEl.textContent = before;
+        runCommand(lineEl);
+        const newLine = document.createElement("div");
+        newLine.className = "line editable";
+        newLine.setAttribute("contenteditable", "true");
+        newLine.setAttribute("spellcheck", "false");
+        newLine.dataset.commandLine = "true";
+        newLine.textContent = after;
+        lineEl.after(newLine);
+        attachEditable(newLine);
+        runCommand(newLine);
+        requestAnimationFrame(() => {
+          activateLine(newLine, 0);
+        });
+      });
+      lineEl.addEventListener("keyup", (event) => {
+        if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+          updateCaret(lineEl);
+        }
+      });
+    };
+
+    document.querySelectorAll("[data-command-line]").forEach((lineEl) => {
+      attachEditable(lineEl);
+    });
+    const firstEditable = document.querySelector(".line.editable");
+    if (firstEditable) {
+      activateLine(firstEditable, 0);
+    }
   </script>
 </body>
 </html>
