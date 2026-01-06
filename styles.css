@@ -1,0 +1,201 @@
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono", "Consolas", "Menlo", monospace;
+  font-size: 16.5px;
+  line-height: 1.8;
+}
+
+::selection {
+  background: var(--white);
+  color: var(--black);
+}
+
+a,
+a:visited {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration-style: dashed;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 20px 70px;
+}
+
+.file-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 2px solid var(--white);
+  padding: 10px 14px;
+}
+
+.file-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-transform: lowercase;
+  letter-spacing: 0.6px;
+}
+
+.file-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.file-meta {
+  font-size: 0.85rem;
+}
+
+.mini-portrait {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--white);
+  object-fit: cover;
+}
+
+.code-window {
+  border: 2px solid var(--white);
+  margin-top: 18px;
+  padding: 18px 18px 20px;
+}
+
+.code-lines {
+  counter-reset: line;
+}
+
+.line {
+  position: relative;
+  padding-left: 72px;
+  white-space: pre-wrap;
+  line-height: 1.9;
+}
+
+.line::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  width: 58px;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.line.spacer {
+  height: 14px;
+}
+
+.kw {
+  font-weight: 700;
+}
+
+.str,
+.comment {
+  font-style: italic;
+}
+
+.tactic-panel {
+  margin-top: 18px;
+  border-top: 2px solid var(--white);
+  padding-top: 14px;
+}
+
+.tactic-title {
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 0.6px;
+}
+
+.terminal {
+  margin-top: 12px;
+  border: 2px solid var(--white);
+  padding: 12px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terminal-log {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  max-height: 220px;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 2px solid var(--white);
+  padding-top: 10px;
+}
+
+.prompt {
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.terminal-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font: inherit;
+  outline: none;
+  caret-color: var(--white);
+}
+
+.tactic-hint {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .file-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mini-portrait {
+    width: 48px;
+    height: 48px;
+  }
+
+  .line {
+    padding-left: 56px;
+  }
+
+  .line::before {
+    width: 44px;
+  }
+}
