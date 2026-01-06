@@ -35,141 +35,88 @@
     <header class="file-bar">
       <div class="file-left">
         <div class="file-name">home.lean</div>
-        <div class="file-meta">tactic mode: type :help</div>
+        <div class="file-meta">lean 4 | infoview</div>
       </div>
       <img class="mini-portrait" src="/files/profile.jpg" alt="Jun Zhai portrait">
     </header>
 
-    <section class="code-window" aria-label="Lean file">
-      <div class="code-lines">
-        <div class="line">/--</div>
-        <div class="line">Home.lean</div>
-        <div class="line">Personal research file for Jun Zhai</div>
-        <div class="line">--/</div>
-        <div class="line spacer">&nbsp;</div>
+    <main class="workspace">
+      <section class="code-window" aria-label="Lean file">
+        <div class="code-lines">
+          <div class="line">/--</div>
+          <div class="line">Home.lean</div>
+          <div class="line">Personal research file for Jun Zhai</div>
+          <div class="line">--/</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">import</span> Mathlib</div>
-        <div class="line"><span class="kw">open</span> scoped Classical</div>
-        <div class="line spacer">&nbsp;</div>
+          <div class="line"><span class="kw">import</span> Mathlib</div>
+          <div class="line"><span class="kw">open</span> scoped Classical</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">namespace</span> Jun</div>
-        <div class="line spacer">&nbsp;</div>
+          <div class="line"><span class="kw">namespace</span> Jun</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">def</span> name : String := <span class="str">"Jun Zhai"</span></div>
-        <div class="line"><span class="kw">def</span> role : String := <span class="str">"PhD student, Mathematics"</span></div>
-        <div class="line"><span class="kw">def</span> focus : List String :=</div>
-        <div class="line">  [ <span class="str">"AI4Math"</span>,</div>
-        <div class="line">    <span class="str">"Scientific machine learning"</span>,</div>
-        <div class="line">    <span class="str">"Type theory"</span></div>
-        <div class="line">  ]</div>
-        <div class="line"><span class="kw">def</span> affiliation : String := <span class="str">"National University of Singapore"</span></div>
-        <div class="line"><span class="kw">def</span> location : String := <span class="str">"Singapore"</span></div>
-        <div class="line spacer">&nbsp;</div>
+          <div class="line"><span class="kw">structure</span> Profile <span class="kw">where</span></div>
+          <div class="line">  name : String</div>
+          <div class="line">  role : String</div>
+          <div class="line">  focus : String</div>
+          <div class="line">  affiliation : String</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">def</span> github : String := <a href="https://github.com/jun2028">"github.com/jun2028"</a></div>
-        <div class="line"><span class="kw">def</span> scholar : String := <a href="https://scholar.google.com/tbc">"scholar.google.com/tbc"</a></div>
-        <div class="line spacer">&nbsp;</div>
+          <div class="line"><span class="kw">def</span> me : Profile :=</div>
+          <div class="line">  { name := <span class="str">"Jun Zhai"</span></div>
+          <div class="line">    role := <span class="str">"PhD student, Mathematics"</span></div>
+          <div class="line">    focus := <span class="str">"AI4Math"</span></div>
+          <div class="line">    affiliation := <span class="str">"National University of Singapore"</span></div>
+          <div class="line">  }</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">def</span> cv : String := <span class="kw">by</span></div>
-        <div class="line">  <span class="comment">-- use tactic mode: :cv</span></div>
-        <div class="line"><span class="kw">def</span> linkedin : String := <span class="kw">by</span></div>
-        <div class="line">  <span class="comment">-- use tactic mode: :linkedin</span></div>
-        <div class="line"><span class="kw">def</span> email : String := <span class="kw">by</span></div>
-        <div class="line">  <span class="comment">-- use tactic mode: :email</span></div>
-        <div class="line spacer">&nbsp;</div>
+          <div class="line"><span class="kw">end</span> Jun</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">def</span> status : String := <span class="str">"Homepage-only site. CLI is the menu."</span></div>
-        <div class="line"><span class="kw">def</span> last_update : String := <span class="str">"2025-08-27"</span></div>
-        <div class="line spacer">&nbsp;</div>
+          <div class="line"><span class="directive">#eval</span> <span class="str">"cv: /files/JUN_ZHAI_CV.pdf"</span></div>
+          <div class="line"><span class="directive">#eval</span> <span class="str">"linkedin: https://www.linkedin.com"</span></div>
+          <div class="line"><span class="directive">#eval</span> <span class="str">"email: zhai@nus.edu.sg"</span></div>
+          <div class="line"><span class="directive">#eval</span> <span class="str">"orcid: 0009-0005-0627-0970"</span></div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div class="line"><span class="kw">end</span> Jun</div>
-      </div>
+          <div class="line"><span class="comment">/-- last_update: 2025-01-07 --/</span></div>
+        </div>
+      </section>
 
-      <div class="tactic-panel" aria-label="Tactic mode CLI">
-        <div class="tactic-title">/-- tactic mode --/</div>
-        <div class="terminal">
-          <div id="terminalLog" class="terminal-log" aria-live="polite"></div>
-          <div class="terminal-input">
-            <span class="prompt">tactic&gt;</span>
-            <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" aria-label="Lean tactic input">
+      <aside class="infoview" aria-label="Lean InfoView">
+        <div class="infoview-section">
+          <button class="infoview-title" type="button" aria-expanded="true" aria-controls="infoview-home">home.lean</button>
+          <div class="infoview-body" id="infoview-home">
+            <div class="infoview-line">No goals.</div>
           </div>
         </div>
-        <div class="tactic-hint">commands: :cv, :linkedin, :email, :help, :clear</div>
-        <noscript>Enable JavaScript to use the tactic console.</noscript>
-      </div>
-    </section>
+        <div class="infoview-section">
+          <button class="infoview-title" type="button" aria-expanded="true" aria-controls="infoview-messages">Messages</button>
+          <div class="infoview-body" id="infoview-messages">
+            <div class="message"><span class="tag">info</span> cv: /files/JUN_ZHAI_CV.pdf</div>
+            <div class="message"><span class="tag">info</span> linkedin: https://www.linkedin.com</div>
+            <div class="message"><span class="tag">info</span> email: zhai@nus.edu.sg</div>
+            <div class="message"><span class="tag">info</span> orcid: 0009-0005-0627-0970</div>
+          </div>
+        </div>
+      </aside>
+    </main>
   </div>
 
   <script>
-    const config = {
-      cv: "/files/JUN_ZHAI_CV.pdf",
-      linkedin: "https://www.linkedin.com",
-      email: "zhai@nus.edu.sg"
-    };
-
-    const log = document.getElementById("terminalLog");
-    const input = document.getElementById("terminalInput");
-
-    const appendLine = (text) => {
-      const line = document.createElement("div");
-      line.className = "terminal-line";
-      line.textContent = text;
-      log.appendChild(line);
-      log.scrollTop = log.scrollHeight;
-    };
-
-    const openLink = (url, label) => {
-      if (!url) {
-        return [`error: ${label} is not set`];
-      }
-      window.open(url, "_blank", "noopener");
-      return [`opening ${label}: ${url}`];
-    };
-
-    const commands = {
-      help: () => [
-        "commands:",
-        ":cv        open the cv pdf",
-        ":linkedin  open linkedin",
-        ":email     print email",
-        ":clear     clear the log",
-        ":help      show this help"
-      ],
-      cv: () => openLink(config.cv, "cv"),
-      linkedin: () => openLink(config.linkedin, "linkedin"),
-      email: () => [`email: ${config.email}`],
-      clear: () => {
-        log.innerHTML = "";
-        return ["log cleared"]; 
-      }
-    };
-
-    const runCommand = (raw) => {
-      const trimmed = raw.trim();
-      if (!trimmed) {
+    document.querySelectorAll(".infoview-section").forEach((section) => {
+      const title = section.querySelector(".infoview-title");
+      const body = section.querySelector(".infoview-body");
+      if (!title || !body) {
         return;
       }
-      appendLine(`tactic> ${trimmed}`);
-      const normalized = trimmed.replace(/^:/, "").toLowerCase();
-      const handler = commands[normalized];
-      if (!handler) {
-        appendLine(`error: unknown tactic \"${normalized}\"`);
-        return;
-      }
-      const output = handler();
-      output.forEach(appendLine);
-    };
-
-    input.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        runCommand(input.value);
-        input.value = "";
-      }
+      title.addEventListener("click", () => {
+        const collapsed = section.classList.toggle("is-collapsed");
+        title.setAttribute("aria-expanded", (!collapsed).toString());
+      });
+      title.setAttribute("aria-expanded", "true");
     });
-
-    ["-- tactic mode ready", "-- type :help"].forEach(appendLine);
-    input.focus();
   </script>
 </body>
 </html>

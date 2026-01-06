@@ -18,6 +18,10 @@ body {
   font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono", "Consolas", "Menlo", monospace;
   font-size: 16.5px;
   line-height: 1.8;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
 ::selection {
@@ -78,9 +82,16 @@ a:focus {
   object-fit: cover;
 }
 
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+  align-items: start;
+}
+
 .code-window {
   border: 2px solid var(--white);
-  margin-top: 18px;
   padding: 18px 18px 20px;
 }
 
@@ -97,12 +108,13 @@ a:focus {
 
 .line::before {
   counter-increment: line;
-  content: counter(line);
+  content: counter(line) " |";
   position: absolute;
   left: 0;
-  width: 58px;
+  width: 64px;
   text-align: right;
   font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 .line.spacer {
@@ -118,69 +130,91 @@ a:focus {
   font-style: italic;
 }
 
-.tactic-panel {
-  margin-top: 18px;
-  border-top: 2px solid var(--white);
-  padding-top: 14px;
+.directive {
+  font-weight: 700;
 }
 
-.tactic-title {
+.infoview {
+  border: 2px solid var(--white);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.infoview-section {
+  border: 2px solid var(--white);
+  padding: 10px 12px;
+}
+
+.infoview-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
   font-weight: 700;
   text-transform: lowercase;
   letter-spacing: 0.6px;
+  border-bottom: 1px dashed var(--white);
+  padding-bottom: 6px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
 }
 
-.terminal {
-  margin-top: 12px;
-  border: 2px solid var(--white);
-  padding: 12px;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.infoview-title::before {
+  content: "▾";
+  display: inline-block;
+  width: 1ch;
 }
 
-.terminal-log {
+.infoview-title:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.infoview-body {
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  overflow-y: auto;
-  max-height: 220px;
 }
 
-.terminal-line {
+.infoview-section.is-collapsed .infoview-title::before {
+  content: "▸";
+}
+
+.infoview-section.is-collapsed .infoview-body {
+  display: none;
+}
+
+.infoview-line {
   white-space: pre-wrap;
 }
 
-.terminal-input {
+.message {
   display: flex;
-  align-items: center;
   gap: 8px;
-  border-top: 2px solid var(--white);
-  padding-top: 10px;
+  align-items: flex-start;
+  white-space: pre-wrap;
 }
 
-.prompt {
-  font-weight: 700;
+.tag {
+  border: 1px solid var(--white);
+  padding: 1px 6px;
+  font-size: 0.75rem;
   text-transform: lowercase;
-}
-
-.terminal-input input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  color: var(--white);
-  font: inherit;
-  outline: none;
-  caret-color: var(--white);
-}
-
-.tactic-hint {
-  margin-top: 10px;
-  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 720px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
   .file-bar {
     flex-direction: row;
     align-items: center;
@@ -196,6 +230,6 @@ a:focus {
   }
 
   .line::before {
-    width: 44px;
+    width: 50px;
   }
 }
