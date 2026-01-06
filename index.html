@@ -3,208 +3,405 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Jun Zhai — PhD student, Mathematics. Research, publications, teaching, and contact.">
-  <title>Jun's Site (TBC)</title>
+  <meta name="description" content="Jun Zhai - PhD student in Mathematics. Lean-style personal research page.">
+  <title>Jun Zhai - Home.lean</title>
 
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Jun Zhai — PhD student, Mathematics">
-  <meta property="og:description" content="Research, publications, teaching, and contact.">
+  <meta property="og:title" content="Jun Zhai - PhD student in Mathematics">
+  <meta property="og:description" content="Lean-style personal research page.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/images/og-card.png"> <!-- replace -->
+  <meta property="og:image" content="/files/profile.jpg">
 
-  <!-- Basic styling (replace with your own CSS or a build system) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#ffd166;--text:#e6eef6}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;background:linear-gradient(180deg,#071229 0%, #071a2f 100%);color:var(--text);}
-    a{color:var(--accent);text-decoration:none}
-    .container{max-width:960px;margin:0 auto;padding:28px}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand .name{font-weight:700;font-size:1.05rem}
-    nav{display:flex;gap:12px}
-    nav a{padding:8px 10px;border-radius:8px;color:var(--muted);font-size:0.95rem}
-    nav a:hover{background:rgba(255,255,255,0.03);color:var(--text)}
-
-    .hero{display:grid;grid-template-columns:1fr 260px;gap:24px;align-items:center;margin:28px 0}
-    .hero h1{margin:0;font-size:1.9rem}
-    .hero p{color:var(--muted);margin:12px 0 0}
-    .avatar{width:240px;height:240px;border-radius:12px;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.04);}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-
-    section.card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;margin-top:18px}
-    h2{margin:0 0 12px;font-size:1.1rem}
-
-    .meta{display:flex;gap:12px;color:var(--muted);font-size:0.95rem}
-
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    ul.pub-list{list-style:none;padding:0;margin:0}
-    ul.pub-list li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
-    .pub-title{font-weight:600}
-    .pub-meta{color:var(--muted);font-size:0.9rem}
-
-    footer{margin:36px 0 12px;color:var(--muted);font-size:0.9rem}
-
-    /* responsive */
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr;}
-      .avatar{width:160px;height:160px;margin-left:auto;margin-right:auto}
-      nav{display:none}
-      .mobile-nav{display:flex}
+    :root {
+      --black: #000;
+      --white: #fff;
     }
 
-    /* small mobile nav button */
-    .mobile-nav{display:none}
-    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);font-weight:600}
+    * {
+      box-sizing: border-box;
+    }
 
-    .contact-grid{display:flex;flex-direction:column;gap:8px}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
-    /* small utilities */
-    .right{margin-left:auto}
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "IBM Plex Mono", "Fira Code", "Cascadia Code", "SF Mono", "Consolas", "Menlo", monospace;
+      line-height: 1.65;
+      letter-spacing: 0.2px;
+      background-image:
+        radial-gradient(var(--white) 0.6px, transparent 0.6px);
+      background-size: 36px 36px;
+      background-position: -6px -6px;
+    }
+
+    ::selection {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    a,
+    a:visited {
+      color: var(--white);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus {
+      outline: none;
+      text-decoration-style: dashed;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    .file-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid var(--white);
+      padding: 10px 14px;
+      text-transform: lowercase;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+
+    .file-meta {
+      font-size: 0.85rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .code-window,
+    .portrait,
+    .tactic {
+      border: 2px solid var(--white);
+      padding: 16px;
+      background: var(--black);
+    }
+
+    .code-lines {
+      counter-reset: line;
+    }
+
+    .line {
+      position: relative;
+      padding-left: 56px;
+      white-space: pre-wrap;
+    }
+
+    .line::before {
+      counter-increment: line;
+      content: counter(line);
+      position: absolute;
+      left: 0;
+      width: 44px;
+      text-align: right;
+      font-size: 0.85rem;
+    }
+
+    .line.spacer {
+      height: 12px;
+    }
+
+    .kw {
+      font-weight: 700;
+    }
+
+    .str {
+      font-style: italic;
+    }
+
+    .comment {
+      font-style: italic;
+    }
+
+    .portrait {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid var(--white);
+    }
+
+    .caption {
+      border-top: 2px solid var(--white);
+      padding-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .tactic {
+      margin-top: 20px;
+    }
+
+    .tactic-title {
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: 0.8px;
+    }
+
+    .terminal {
+      margin-top: 12px;
+      border: 2px dashed var(--white);
+      padding: 12px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .terminal-log {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow-y: auto;
+      max-height: 220px;
+      padding-right: 6px;
+    }
+
+    .terminal-line {
+      white-space: pre-wrap;
+    }
+
+    .terminal-input {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-top: 2px dashed var(--white);
+      padding-top: 10px;
+    }
+
+    .prompt {
+      font-weight: 700;
+      text-transform: lowercase;
+    }
+
+    .terminal-input input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font: inherit;
+      outline: none;
+      caret-color: var(--white);
+    }
+
+    .tactic-hint {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      margin-top: 24px;
+      border-top: 2px solid var(--white);
+      padding-top: 12px;
+      font-size: 0.85rem;
+      text-transform: lowercase;
+      letter-spacing: 0.8px;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .file-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .line {
+        padding-left: 44px;
+      }
+
+      .line::before {
+        width: 34px;
+      }
+    }
   </style>
 
-  <!-- Structured data for SEO (replace fields) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Zhai Jun",
+    "name": "Jun Zhai",
     "jobTitle": "PhD student, Mathematics",
     "worksFor": {
       "@type": "Organization",
       "name": "National University of Singapore"
     },
-    "sameAs": ["https://scholar.google.com/tbc","https://github.com/jun2028"]
+    "sameAs": ["https://scholar.google.com/tbc", "https://github.com/jun2028"]
   }
   </script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div style="width:120px;height:48px;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,#10213a,#0b1624);display:flex;align-items:center;justify-content:center;font-weight:700">HELLO!</div>
-      </div>
-
-      <nav aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="/files/JUN_ZHAI_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      </nav>
-
-      <div class="mobile-nav" aria-hidden="true">
-        <button id="navToggle" class="btn">Menu</button>
-      </div>
+  <div class="page">
+    <header class="file-bar">
+      <div class="file-name">home.lean</div>
+      <div class="file-meta">tactic mode: type :help</div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <h1>John, Jun ZHAI</h1>
-          <div class="meta">2nd year PhD student in Mathematics. Working on scientific machine learning.</div>
-          <p style="margin-top:12px;color:var(--muted)"> (DRAFT) I am a PhD student at the National University of Singapore. Up to the first year of PhD, my background has largely been on pure math and physics. Since the second year, I have decided to ride the wind of AI research. My research interest lies broadly in the area of AI4Math. (TBC).</p>
+    <main class="layout">
+      <section class="code-window" aria-label="Lean file">
+        <div class="code-lines">
+          <div class="line">/--</div>
+          <div class="line">Home.lean</div>
+          <div class="line">Personal research page for Jun Zhai</div>
+          <div class="line">--/</div>
+          <div class="line"><span class="kw">import</span> Mathlib</div>
+          <div class="line"><span class="kw">open</span> scoped Classical</div>
+          <div class="line spacer">&nbsp;</div>
 
-          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-            <a class="pill" href="#research">Research</a>
-            <a class="pill" href="#publications">Publications</a>
-            <a class="pill" href="https://github.com/jun2028" target="_blank" rel="noopener">GitHub</a>
-            <a class="pill" href="https://scholar.google.com/tbc" target="_blank" rel="noopener">Google Scholar (TBC)</a>
-          </div>
-        </div>
+          <div class="line"><span class="kw">section</span> Identity</div>
+          <div class="line"><span class="kw">def</span> name : String := <span class="str">"Jun Zhai"</span></div>
+          <div class="line"><span class="kw">def</span> role : String := <span class="str">"PhD student, Mathematics"</span></div>
+          <div class="line"><span class="kw">def</span> focus : List String := [<span class="str">"AI4Math"</span>, <span class="str">"Scientific machine learning"</span>, <span class="str">"Type theory"</span>]</div>
+          <div class="line"><span class="kw">def</span> affiliation : String := <span class="str">"National University of Singapore"</span></div>
+          <div class="line"><span class="kw">def</span> location : String := <span class="str">"Singapore"</span></div>
+          <div class="line"><span class="kw">end</span> Identity</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <aside class="avatar card" aria-hidden="false">
-          <img src="/files/profile.jpg" alt="Jun ZHAI — profile photo"> <!-- replace with portrait -->
-        </aside>
-      </section>
+          <div class="line"><span class="kw">section</span> Research</div>
+          <div class="line"><span class="kw">def</span> agenda : String := <span class="str">"Formalization for scientific ML and AI4Math."</span></div>
+          <div class="line"><span class="kw">def</span> current : List String := [<span class="str">"Foundations for learning dynamics"</span>, <span class="str">"Lean tooling for research"</span>, <span class="str">"Math + ML interfaces"</span>]</div>
+          <div class="line"><span class="kw">end</span> Research</div>
+          <div class="line spacer">&nbsp;</div>
 
-      <section id="about" class="card">
-        <h2>About</h2>
-        <p style="color:var(--muted)">(TBC) Short academic bio: I got my B.Sc. in Math and Physics from the National University of Singapore, etc etc.</p>
+          <div class="line"><span class="kw">section</span> Links</div>
+          <div class="line"><span class="kw">def</span> github : String := <a href="https://github.com/jun2028">github.com/jun2028</a></div>
+          <div class="line"><span class="kw">def</span> scholar : String := <a href="https://scholar.google.com/tbc">scholar.google.com/tbc</a></div>
+          <div class="line"><span class="kw">def</span> cv : String := <span class="kw">by</span></div>
+          <div class="line">  <span class="comment">-- use tactic console: :cv</span></div>
+          <div class="line"><span class="kw">def</span> linkedin : String := <span class="kw">by</span></div>
+          <div class="line">  <span class="comment">-- use tactic console: :linkedin</span></div>
+          <div class="line"><span class="kw">def</span> email : String := <span class="kw">by</span></div>
+          <div class="line">  <span class="comment">-- use tactic console: :email</span></div>
+          <div class="line"><span class="kw">end</span> Links</div>
+          <div class="line spacer">&nbsp;</div>
 
-        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
-          <div class="pill">Email: zhai(AT)u(DOT)nus(DOT)edu </div>
-          <div class="pill">Location: Singapore</div>
-          <div class="pill">ORCID: <a href="https://orcid.org/0009-0005-0627-0970">0009-0005-0627-0970</a></div>
-        </div>
-      </section>
-
-      <section id="research" class="card">
-        <h2>Research</h2>
-        <p class="pub-meta">(TBC) A short paragraph summarising current research agenda. etc etc etc etc.</p>
-        <ul style="margin-top:12px">
-          <li>Problem A — aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-          <li>Problem B — bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</li>
-          <li>Methods: Convolutional Neural Networks, type theory, analytic techniques, etc.</li>
-        </ul>
-      </section>
-
-      <section id="publications" class="card">
-        <h2>Selected publications</h2>
-        <div class="grid-2">
-          <div>
-            <ul class="pub-list">
-              <li>
-                <div class="pub-title">Title of paper 1. <span class="pub-meta">Journal, Year — <a href="#">PDF</a></span></div>
-                <div class="pub-meta">Authors: John Appleseed, A. Collaborator</div>
-              </li>
-              <li>
-                <div class="pub-title">Title of paper 2. <span class="pub-meta">preprint, Year — <a href="#">arXiv</a></span></div>
-                <div class="pub-meta">Authors: John Appleseed</div>
-              </li>
-            </ul>
-            <p style="margin-top:10px"><a href="/publications.html">View full publications list (bibtex, links, slides)</a></p>
-          </div>
-
-          <div>
-            <h2 style="font-size:1rem;margin-top:0">(TBC) Preprints & Talks</h2>
-            <ul style="margin:0;padding:0;list-style:none">
-              <li style="padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)">Talk: "Title of talk" — Conference, Year (<a href="#">slides</a>)</li>
-              <li style="padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)">Preprint: "Title" — <a href="#">arXiv:xxxx.xxxxx</a></li>
-            </ul>
-          </div>
+          <div class="line"><span class="kw">section</span> Notes</div>
+          <div class="line"><span class="kw">def</span> status : String := <span class="str">"Homepage-only site. CLI is the menu."</span></div>
+          <div class="line"><span class="kw">def</span> last_update : String := <span class="str">"2025-08-27"</span></div>
+          <div class="line"><span class="kw">end</span> Notes</div>
         </div>
       </section>
 
-      <section id="teaching" class="card">
-        <h2>Teaching</h2>
-        <p class="pub-meta"> (TBC) List courses taught and/or graded.</p>
-        <ul style="margin-top:12px">
-          <li>Course A (Undergrad) — Term Year — Role: TA / Lecturer</li>
-          <li>Course B (Graduate) — Term Year — Role: Lecturer</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <div class="contact-grid">
-          <div> Email: zhai(AT)nus(DOT)edu(DOT)sg </div>
-          <div>Office: S17-05-10 Department of Mathematics, National University of Singapore</div>
-          <div>GitHub: <a href="https://github.com/jun2028">jun2028</a></div>
-        </div>
-      </section>
-
+      <aside class="portrait" aria-label="Portrait">
+        <img src="/files/profile.jpg" alt="Jun Zhai portrait">
+        <div class="caption">/-- portrait --/</div>
+      </aside>
     </main>
 
-    <footer>
-      <div>© Jun Zhai — last updated: <time datetime="2025-08-27">August 27, 2025</time></div>
-    </footer>
+    <section class="tactic" aria-label="Tactic mode CLI">
+      <div class="tactic-title">tactic mode</div>
+      <div class="terminal">
+        <div id="terminalLog" class="terminal-log" aria-live="polite"></div>
+        <div class="terminal-input">
+          <span class="prompt">tactic&gt;</span>
+          <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" aria-label="Lean tactic input">
+        </div>
+      </div>
+      <div class="tactic-hint">Commands: :cv, :linkedin, :email, :help, :clear</div>
+      <noscript>Enable JavaScript to use the tactic console.</noscript>
+    </section>
+
+    <footer class="footer">-- last updated: 2025-08-27 --</footer>
   </div>
 
   <script>
-    // Mobile nav toggle (simple)
-    const navToggle = document.getElementById('navToggle');
-    navToggle?.addEventListener('click', ()=>{
-      const nav = document.querySelector('nav');
-      if(!nav) return;
-      if(nav.style.display === 'flex') nav.style.display = '';
-      else nav.style.display = 'flex';
-      nav.style.flexDirection = 'column';
-      nav.style.alignItems = 'flex-end';
+    const config = {
+      cv: "/files/JUN_ZHAI_CV.pdf",
+      linkedin: "https://www.linkedin.com",
+      email: "zhai@nus.edu.sg"
+    };
+
+    const log = document.getElementById("terminalLog");
+    const input = document.getElementById("terminalInput");
+
+    const appendLine = (text) => {
+      const line = document.createElement("div");
+      line.className = "terminal-line";
+      line.textContent = text;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    };
+
+    const openLink = (url, label) => {
+      if (!url) {
+        return [`error: ${label} is not set`];
+      }
+      window.open(url, "_blank", "noopener");
+      return [`opening ${label}: ${url}`];
+    };
+
+    const commands = {
+      help: () => [
+        "commands:",
+        ":cv        open the cv pdf",
+        ":linkedin  open linkedin",
+        ":email     print email",
+        ":clear     clear the log",
+        ":help      show this help"
+      ],
+      cv: () => openLink(config.cv, "cv"),
+      linkedin: () => openLink(config.linkedin, "linkedin"),
+      email: () => [`email: ${config.email}`],
+      clear: () => {
+        log.innerHTML = "";
+        return ["log cleared"]; 
+      }
+    };
+
+    const runCommand = (raw) => {
+      const trimmed = raw.trim();
+      if (!trimmed) {
+        return;
+      }
+      appendLine(`tactic> ${trimmed}`);
+      const normalized = trimmed.replace(/^:/, "").toLowerCase();
+      const handler = commands[normalized];
+      if (!handler) {
+        appendLine(`error: unknown tactic \"${normalized}\"`);
+        return;
+      }
+      const output = handler();
+      output.forEach(appendLine);
+    };
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        runCommand(input.value);
+        input.value = "";
+      }
     });
+
+    ["-- tactic mode ready", "-- type :help"].forEach(appendLine);
+    input.focus();
   </script>
 </body>
 </html>
