@@ -126,7 +126,18 @@ a:focus {
   font-size: 0.85rem;
 }
 
+.mini-portrait-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.mini-portrait-link:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+}
+
 .mini-portrait {
+  display: block;
   width: 64px;
   height: 64px;
   border: 2px solid var(--white);

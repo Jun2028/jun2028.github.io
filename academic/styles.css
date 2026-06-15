@@ -1,0 +1,277 @@
+:root {
+  --paper: #f8f7f3;
+  --ink: #1f2328;
+  --muted: #626b74;
+  --line: #d9d3c6;
+  --accent: #176b87;
+  --accent-2: #8a5a2b;
+  --soft: #ebe7dc;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(248, 247, 243, 0.92)),
+    var(--paper);
+  color: var(--ink);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-color: rgba(23, 107, 135, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-2);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 58px 0 70px;
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1fr);
+  gap: 58px;
+  align-items: start;
+}
+
+.profile {
+  position: sticky;
+  top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.portrait-link {
+  display: block;
+  width: min(100%, 218px);
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+  box-shadow: 0 12px 30px rgba(36, 30, 18, 0.12);
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.identity h1,
+.content h2,
+.entry h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.identity h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(2rem, 6vw, 2.7rem);
+  line-height: 1;
+}
+
+.identity p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.link-list a {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 6px 11px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-list a:hover,
+.link-list a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--white);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.content section {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.content .intro {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.content h2 {
+  margin-bottom: 13px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.55rem, 4vw, 2.2rem);
+  line-height: 1.12;
+}
+
+.content p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+.interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interest-list span {
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.68);
+  padding: 7px 11px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(217, 211, 198, 0.8);
+}
+
+.entry:first-child {
+  padding-top: 0;
+}
+
+.entry h3 {
+  font-size: 1.03rem;
+}
+
+.entry p {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.entry time {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.plain-list li + li {
+  margin-top: 7px;
+}
+
+@media (max-width: 780px) {
+  .page-shell {
+    padding-top: 28px;
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .profile {
+    position: static;
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .portrait-link {
+    width: 118px;
+  }
+
+  .link-list {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    width: min(100% - 28px, 1080px);
+  }
+
+  .profile {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .portrait-link {
+    width: 92px;
+  }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .entry time {
+    text-align: left;
+  }
+}
