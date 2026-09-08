@@ -211,12 +211,37 @@ a:focus-visible {
   color: var(--muted);
 }
 
-.entry time {
+.entry time,
+.entry .entry-date {
+  margin-top: 0;
   color: var(--muted);
   font-size: 0.92rem;
   font-weight: 700;
   text-align: right;
   white-space: nowrap;
+}
+
+.research-entry {
+  grid-template-columns: minmax(0, 1fr) 140px;
+}
+
+.entry .entry-affiliation {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.research-entry p + p {
+  margin-top: 10px;
+}
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
 }
 
 .plain-list {
@@ -271,7 +296,12 @@ a:focus-visible {
     gap: 6px;
   }
 
-  .entry time {
+  .entry time,
+  .entry .entry-date {
     text-align: left;
+  }
+
+  .research-entry .entry-date {
+    grid-row: 1;
   }
 }
