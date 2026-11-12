@@ -175,42 +175,14 @@ strong { color: var(--ink); font-weight: 600; }
 }
 
 /* Selected work */
-.featured-project {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface);
-  padding: 28px 30px;
-}
-.project-topline { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
-.featured-project h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1.25; letter-spacing: -.015em; color: var(--ink); margin: 10px 0 6px; }
-.project-question { font-size: 18px; line-height: 1.5; color: var(--ink); margin-bottom: 12px; }
-.featured-project > p:not(.project-question) { font-size: 15px; }
-.proof-flow {
-  list-style: none;
-  padding: 0;
-  margin: 22px 0 18px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-.proof-flow li {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 14px 16px;
-}
-.step-number { color: var(--accent); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.proof-flow strong { font-size: 15px; margin-top: 2px; }
-.proof-flow li > span:last-child { font-size: 14px; color: var(--muted); line-height: 1.5; margin-top: 2px; }
-.featured-project > p.project-detail { font-size: 14px; color: var(--muted); }
 .supporting-project {
   display: grid;
   grid-template-columns: 136px minmax(0, 1fr);
   gap: 20px;
   align-items: baseline;
-  padding: 20px 0 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .supporting-project h3 { font-size: 16px; font-weight: 600; }
 .supporting-project h3 a { text-decoration: none; }
@@ -258,8 +230,6 @@ strong { color: var(--ink); font-weight: 600; }
   .statement { font-size: 25px; }
   .intro-lead { font-size: 17px; }
   .publication, .experience, .background-row, .supporting-project { grid-template-columns: 1fr; gap: 4px; }
-  .featured-project { padding: 22px 20px; }
-  .proof-flow { grid-template-columns: 1fr; }
   .background-title { flex-direction: column; gap: 0; }
   .page-footer { flex-direction: column; gap: 6px; }
 }
@@ -268,6 +238,6 @@ strong { color: var(--ink); font-weight: 600; }
   .topbar, .page-footer { display: none; }
   .page { padding: 0; max-width: none; }
   .section { padding-top: 24px; }
-  .publication, .experience, .featured-project, .background-row { break-inside: avoid; }
+  .publication, .experience, .background-row { break-inside: avoid; }
   .link-list a, .pub-links a { border: 0; padding: 0; }
 }
