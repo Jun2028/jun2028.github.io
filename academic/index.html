@@ -47,131 +47,143 @@
   </script>
 </head>
 <body>
-  <main class="page-shell">
-    <aside class="profile">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="Return to the Lean frontpage">ZHAI Jun</a>
+      <nav class="section-nav" aria-label="On this page">
+        <a href="#publications">Publications</a>
+        <a href="#research-experience">Research experience</a>
+        <a href="#selected-work">Selected work</a>
+        <a href="#background">Background</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="profile" aria-label="Profile">
       <a class="portrait-link" href="/" aria-label="Return to the Lean frontpage">
         <img class="portrait" src="/files/profile.jpg" alt="ZHAI Jun">
       </a>
-
       <div class="identity">
         <h1>ZHAI Jun</h1>
-        <p>PhD student in Mathematics</p>
-        <a href="https://www.math.nus.edu.sg/" target="_blank" rel="noopener">National University of Singapore</a>
+        <p class="role">PhD student in Mathematics</p>
+        <a class="affiliation" href="https://www.math.nus.edu.sg/" target="_blank" rel="noopener">National University of Singapore</a>
+        <nav class="link-list" aria-label="Profile links">
+          <a href="mailto:zhai@u.nus.edu">Email</a>
+          <a href="/files/JUN_ZHAI_CV.pdf">CV</a>
+          <a href="https://github.com/Jun2028" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/zhai-jun/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://orcid.org/0009-0005-0627-0970" target="_blank" rel="noopener">ORCID</a>
+        </nav>
       </div>
+    </section>
 
-      <nav class="link-list" aria-label="Profile links">
-        <a href="mailto:zhai@u.nus.edu">Email</a>
-        <a href="/files/JUN_ZHAI_CV.pdf">CV</a>
-        <a href="https://github.com/Jun2028" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/zhai-jun/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://orcid.org/0009-0005-0627-0970" target="_blank" rel="noopener">ORCID</a>
-      </nav>
-      <nav class="section-nav" aria-label="On this page">
-        <a href="#research-experience">Research experience <span aria-hidden="true">↗</span></a>
-        <a href="#selected-work">Selected work <span aria-hidden="true">↗</span></a>
-        <a href="#background">Background <span aria-hidden="true">↗</span></a>
-      </nav>
-    </aside>
+    <section class="section intro" aria-label="About">
+      <p class="eyebrow">Mathematics · Machine learning · Formal methods</p>
+      <h2 class="statement">AI for mathematical reasoning.</h2>
+      <p class="intro-lead">I work on automated theorem proving with language models, with an interest in how agentic and evolutionary systems can support mathematical research.</p>
+      <p class="intro-context">I am a mathematics PhD student at NUS, advised by Prof. Liu Yang and co-advised by Prof. Xinliang An, in the <a href="https://scaling-group.github.io/" target="_blank" rel="noopener">Scaling Group</a>. My background is in mathematics and physics, spanning logic, geometry, and number theory.</p>
+    </section>
 
-    <div class="content">
-      <header class="intro">
-        <p class="eyebrow">Mathematics · Machine learning · Formal methods</p>
-        <h2>AI for mathematical<br class="desktop-break"> reasoning.</h2>
-        <p class="intro-lead">I work on automated theorem proving with language models, with an interest in how agentic and evolutionary systems can support mathematical research.</p>
-        <p class="intro-context">I am a mathematics PhD student at NUS, advised by Prof. Liu Yang and co-advised by Prof. Xinliang An, in the <a href="https://scaling-group.github.io/" target="_blank" rel="noopener">Scaling Group</a>. My background is in mathematics and physics, spanning logic, geometry, and number theory.</p>
-      </header>
-
-      <section id="research-experience" aria-labelledby="research-experience-title">
-        <div class="section-heading">
-          <h2 id="research-experience-title">Research experience</h2>
-          <span class="section-index" aria-hidden="true">01</span>
-        </div>
-        <div class="timeline">
-          <article class="experience current">
-            <p class="entry-date">2024 — present</p>
-            <div class="experience-body">
-              <h3>National University of Singapore</h3>
-              <p class="role">Doctoral research <span class="status">Current</span></p>
-              <p>AI4Math, language-model theorem proving, and evolutionary search. Developing tools to generate, verify, and analyse formal proofs in Lean.</p>
-              <a class="text-link" href="#selected-work">Explore ProofConf <span aria-hidden="true">↘</span></a>
+    <section id="publications" class="section" aria-labelledby="publications-title">
+      <h2 class="section-title" id="publications-title">Publications</h2>
+      <ol class="pub-list">
+        <li class="publication">
+          <p class="pub-year">2026</p>
+          <div>
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2606.20467" target="_blank" rel="noopener">Agentic Symbolic Search: Approximating Solutions of PDEs Beyond Hand-crafted Expressions, Meshes, and Neural Networks</a></h3>
+            <p class="pub-authors">Zongmin Yu, <strong>Jun Zhai</strong>, Liu Yang</p>
+            <p class="pub-venue">Submitted to npj Artificial Intelligence</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2606.20467" target="_blank" rel="noopener">arXiv:2606.20467</a>
             </div>
-          </article>
-          <article class="experience">
-            <p class="entry-date">Jun — Aug 2026</p>
-            <div class="experience-body">
-              <h3>Zhejiang Lab</h3>
-              <p class="role">Visiting research · Hangzhou, China</p>
-              <p>Three-month research visit for the NUS–Zhejiang Lab <em>AI for Math</em> collaboration, involving Prof. Liu Yang and Prof. Zhang Lei.</p>
-            </div>
-          </article>
-          <article class="experience earlier">
-            <p class="entry-date">2023</p>
-            <div class="experience-body">
-              <h3>Tokyo Institute of Technology</h3>
-              <p class="role">Young Science and Engineering Researchers Program</p>
-              <p><strong>Pseudospheres and Bäcklund transforms.</strong> Differential geometry and soliton theory, supervised by Prof. Kotaro Yamada.</p>
-            </div>
-          </article>
-          <article class="experience earlier">
-            <p class="entry-date">2022</p>
-            <div class="experience-body">
-              <h3>National University of Singapore</h3>
-              <p class="role">Advanced Undergraduate Research Opportunity Programme</p>
-              <p><strong>Gauss sums.</strong> Number theory and representation theory, including the Weil representation, supervised by Prof. Hung Yean Loke.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="selected-work" aria-labelledby="selected-work-title">
-        <div class="section-heading">
-          <h2 id="selected-work-title">Selected work</h2>
-          <span class="section-index" aria-hidden="true">02</span>
-        </div>
-        <article class="featured-project">
-          <div class="project-topline">
-            <p class="eyebrow">Formal proofs · Confidence estimation</p>
-            <a class="text-link" href="https://github.com/Jun2028/ProofConf" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
           </div>
-          <h3>ProofConf</h3>
-          <p class="project-question">Does a model’s confidence tell us whether its proof is correct?</p>
-          <p>I built a reproducible pipeline to investigate this question: generate Lean proofs with language models, check them with Lean, and compare token-level confidence signals against verification outcomes.</p>
-          <ol class="proof-flow" aria-label="ProofConf evaluation pipeline">
-            <li><span class="step-number">01</span><strong>Generate</strong><span>Proofs &amp; token log-probabilities</span></li>
-            <li><span class="step-number">02</span><strong>Verify</strong><span>Correctness checked by Lean</span></li>
-            <li><span class="step-number">03</span><strong>Analyse</strong><span>Confidence against pass / fail</span></li>
-          </ol>
-          <p class="project-detail">Includes sliding-window confidence metrics and localisation of low-confidence proof segments.</p>
-        </article>
-        <div class="supporting-project">
-          <h3><a href="https://github.com/Jun2028/DeepConf" target="_blank" rel="noopener">DeepConf <span aria-hidden="true">↗</span></a></h3>
-          <p>Python implementation of <a href="https://arxiv.org/abs/2508.15260" target="_blank" rel="noopener"><em>Deep Think with Confidence</em></a> by Fu et al.</p>
-        </div>
-      </section>
+        </li>
+      </ol>
+    </section>
 
-      <section id="background" aria-labelledby="background-title">
-        <div class="section-heading">
-          <h2 id="background-title">Background</h2>
-          <a class="text-link" href="/files/JUN_ZHAI_CV.pdf">Full CV <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="background-row">
-          <h3>Education</h3>
-          <div class="background-items">
-            <div><p class="background-title">PhD in Mathematics <span>2024 — present</span></p><p>National University of Singapore</p></div>
-            <div><p class="background-title">BSc in Mathematics and Physics <span>2020 — 2024</span></p><p>National University of Singapore · Honours with Highest Distinction</p><p>Thesis: <em>Large Cardinals</em>, supervised by Prof. Chong Chi Tat.<br>Special Programme in Mathematics.</p></div>
+    <section id="research-experience" class="section" aria-labelledby="research-experience-title">
+      <h2 class="section-title" id="research-experience-title">Research experience</h2>
+      <ol class="timeline">
+        <li class="experience current">
+          <p class="entry-date">2024 — present</p>
+          <div class="experience-body">
+            <h3>National University of Singapore</h3>
+            <p class="role">Doctoral research <span class="status">Current</span></p>
+            <p>AI4Math, language-model theorem proving, and evolutionary search. Developing tools to generate, verify, and analyse formal proofs in Lean.</p>
+            <a class="text-link" href="#selected-work">Explore ProofConf <span aria-hidden="true">↘</span></a>
           </div>
+        </li>
+        <li class="experience">
+          <p class="entry-date">Jun — Aug 2026</p>
+          <div class="experience-body">
+            <h3>Zhejiang Lab</h3>
+            <p class="role">Visiting research · Hangzhou, China</p>
+            <p>Three-month research visit for the NUS–Zhejiang Lab <em>AI for Math</em> collaboration, involving Prof. Liu Yang and Prof. Zhang Lei.</p>
+          </div>
+        </li>
+        <li class="experience">
+          <p class="entry-date">2023</p>
+          <div class="experience-body">
+            <h3>Tokyo Institute of Technology</h3>
+            <p class="role">Young Science and Engineering Researchers Program</p>
+            <p><strong>Pseudospheres and Bäcklund transforms.</strong> Differential geometry and soliton theory, supervised by Prof. Kotaro Yamada.</p>
+          </div>
+        </li>
+        <li class="experience">
+          <p class="entry-date">2022</p>
+          <div class="experience-body">
+            <h3>National University of Singapore</h3>
+            <p class="role">Advanced Undergraduate Research Opportunity Programme</p>
+            <p><strong>Gauss sums.</strong> Number theory and representation theory, including the Weil representation, supervised by Prof. Hung Yean Loke.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="selected-work" class="section" aria-labelledby="selected-work-title">
+      <h2 class="section-title" id="selected-work-title">Selected work</h2>
+      <article class="featured-project">
+        <div class="project-topline">
+          <p class="eyebrow">Formal proofs · Confidence estimation</p>
+          <a class="text-link" href="https://github.com/Jun2028/ProofConf" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="background-row">
-          <h3>Recognition</h3>
-          <p>Tin Ka Ping Foundation Scholarship<br>Tham Kai Shui Excelsior Scholarship<br>Dean’s Lists</p>
+        <h3>ProofConf</h3>
+        <p class="project-question">Does a model’s confidence tell us whether its proof is correct?</p>
+        <p>I built a reproducible pipeline to investigate this question: generate Lean proofs with language models, check them with Lean, and compare token-level confidence signals against verification outcomes.</p>
+        <ol class="proof-flow" aria-label="ProofConf evaluation pipeline">
+          <li><span class="step-number">01</span><strong>Generate</strong><span>Proofs &amp; token log-probabilities</span></li>
+          <li><span class="step-number">02</span><strong>Verify</strong><span>Correctness checked by Lean</span></li>
+          <li><span class="step-number">03</span><strong>Analyse</strong><span>Confidence against pass / fail</span></li>
+        </ol>
+        <p class="project-detail">Includes sliding-window confidence metrics and localisation of low-confidence proof segments.</p>
+      </article>
+      <div class="supporting-project">
+        <h3><a href="https://github.com/Jun2028/DeepConf" target="_blank" rel="noopener">DeepConf <span aria-hidden="true">↗</span></a></h3>
+        <p>Python implementation of <a href="https://arxiv.org/abs/2508.15260" target="_blank" rel="noopener"><em>Deep Think with Confidence</em></a> by Fu et al.</p>
+      </div>
+    </section>
+
+    <section id="background" class="section" aria-labelledby="background-title">
+      <h2 class="section-title" id="background-title">Background <a class="text-link" href="/files/JUN_ZHAI_CV.pdf">Full CV <span aria-hidden="true">↗</span></a></h2>
+      <div class="background-row">
+        <h3>Education</h3>
+        <div class="background-items">
+          <div><p class="background-title">PhD in Mathematics <span>2024 — present</span></p><p>National University of Singapore</p></div>
+          <div><p class="background-title">BSc in Mathematics and Physics <span>2020 — 2024</span></p><p>National University of Singapore · Honours with Highest Distinction</p><p>Thesis: <em>Large Cardinals</em>, supervised by Prof. Chong Chi Tat.<br>Special Programme in Mathematics.</p></div>
         </div>
-        <div class="background-row">
-          <h3>Teaching</h3>
-          <div><p class="background-title">Teaching Assistant · NUS <span>2023 — present</span></p><p>Calculus, linear algebra, and quantitative finance.</p></div>
-        </div>
-      </section>
-      <footer class="page-footer"><span>ZHAI Jun · National University of Singapore</span><a href="mailto:zhai@u.nus.edu">Get in touch <span aria-hidden="true">↗</span></a></footer>
-    </div>
+      </div>
+      <div class="background-row">
+        <h3>Recognition</h3>
+        <p>Tin Ka Ping Foundation Scholarship<br>Tham Kai Shui Excelsior Scholarship<br>Dean’s Lists</p>
+      </div>
+      <div class="background-row">
+        <h3>Teaching</h3>
+        <div><p class="background-title">Teaching Assistant · NUS <span>2023 — present</span></p><p>Calculus, linear algebra, and quantitative finance.</p></div>
+      </div>
+    </section>
+
+    <footer class="page-footer"><span>ZHAI Jun · National University of Singapore</span><a href="mailto:zhai@u.nus.edu">Get in touch <span aria-hidden="true">↗</span></a></footer>
   </main>
 </body>
 </html>
