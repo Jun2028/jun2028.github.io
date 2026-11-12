@@ -97,11 +97,11 @@
             <div class="pub-links">
               <a href="https://scaling-group.github.io/blogs/en/producing-mathematics-understanding-mathematics/" target="_blank" rel="noopener">Blog: Producing Mathematics, Understanding Mathematics</a>
             </div>
-            <figure class="entry-figure">
-              <a href="https://competition.sair.foundation/competitions/igp24/discoveries" target="_blank" rel="noopener"><img src="/academic/img/igp24-discoveries.webp" width="2402" height="1732" loading="lazy" alt="IGP24 discovery coverage: 163,956 of 165,836 signatures solved (98.9%), 163,334 new discoveries beyond the 622-signature LMFDB baseline, with charts of discovered pairs and of distinct transitive groups reaching 25,000 over the competition"></a>
-              <figcaption>IGP24 discovery coverage across all participants: 163,956 of 165,836 signatures solved, with every degree-24 transitive group realized. Source: SAIR Discoveries page.</figcaption>
-            </figure>
           </div>
+          <figure class="entry-figure">
+            <img class="zoomable" src="/academic/img/igp24-discoveries.webp" width="1460" height="1755" loading="lazy" alt="IGP24 discovery coverage: 163,956 solved signatures (98.9% of all valid signatures), 163,334 new discoveries beyond the 622-signature LMFDB baseline, 1,880 uncovered; below, a chart of distinct transitive groups with at least one discovered signature rising to 25,000 between June and August 2026">
+            <figcaption>IGP24 discovery coverage across all participants: 163,956 of 165,836 signatures solved, and the number of distinct degree-24 transitive groups found over time, reaching all 25,000. Source: SAIR Discoveries page.</figcaption>
+          </figure>
         </li>
       </ol>
     </section>
@@ -118,11 +118,11 @@
             <div class="pub-links">
               <a href="https://arxiv.org/abs/2606.20467" target="_blank" rel="noopener">arXiv:2606.20467</a>
             </div>
-            <figure class="entry-figure">
-              <a href="/academic/img/asys-overview.webp" target="_blank" rel="noopener"><img src="/academic/img/asys-overview.webp" width="1400" height="804" loading="lazy" alt="Overview of Agentic Symbolic Search: a research coordinator plans searches; parallel agent workers construct ansatzes and fit parameters against a fixed evaluator; results feed a program archive and written guidance, producing a selected mathematical program and a scientific assessment"></a>
-              <figcaption>Overview of the ASYS framework (Figure 1 of the paper).</figcaption>
-            </figure>
           </div>
+          <figure class="entry-figure">
+            <img class="zoomable" src="/academic/img/asys-overview.webp" width="1400" height="804" loading="lazy" alt="Overview of Agentic Symbolic Search: a research coordinator plans searches; parallel agent workers construct ansatzes and fit parameters against a fixed evaluator; results feed a program archive and written guidance, producing a selected mathematical program and a scientific assessment">
+            <figcaption>Overview of the ASYS framework (Figure 1 of the paper).</figcaption>
+          </figure>
         </li>
       </ol>
     </section>
@@ -187,5 +187,29 @@
 
     <footer class="page-footer"><a href="mailto:zhai@u.nus.edu">Get in touch <span aria-hidden="true">↗</span></a></footer>
   </main>
+  <div class="lightbox" hidden>
+    <img alt="">
+  </div>
+  <script>
+    (() => {
+      const box = document.querySelector(".lightbox");
+      const big = box.querySelector("img");
+      const close = () => { box.hidden = true; document.body.classList.remove("no-scroll"); };
+      document.querySelectorAll("img.zoomable").forEach((img) => {
+        img.tabIndex = 0;
+        img.setAttribute("role", "button");
+        const open = () => {
+          big.src = img.currentSrc || img.src;
+          big.alt = img.alt;
+          box.hidden = false;
+          document.body.classList.add("no-scroll");
+        };
+        img.addEventListener("click", open);
+        img.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+      });
+      box.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !box.hidden) close(); });
+    })();
+  </script>
 </body>
 </html>
