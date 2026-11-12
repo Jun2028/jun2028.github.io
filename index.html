@@ -48,7 +48,7 @@
     <header class="file-bar">
       <div class="file-left">
         <div class="file-name">academic.lean</div>
-        <div class="file-meta">do: #cv #github #linkedin #email #orcid #transition</div>
+        <div class="file-meta">do: #cv #paper #github #linkedin #email #orcid #transition</div>
       </div>
       <a class="mini-portrait-link" href="/academic/" aria-label="Open academic homepage">
         <img class="mini-portrait" src="/files/profile.jpg" alt="ZHAI Jun portrait">
@@ -150,6 +150,10 @@
         message: "cv: /files/JUN_ZHAI_CV.pdf",
         open: "/files/JUN_ZHAI_CV.pdf"
       },
+      "#paper": {
+        message: "paper: Agentic Symbolic Search",
+        link: "https://arxiv.org/abs/2606.20467"
+      },
       "#github": {
         message: "github: github.com/Jun2028",
         open: "https://github.com/Jun2028"
@@ -248,7 +252,7 @@
       }
     };
 
-    const addMessage = (text) => {
+    const addMessage = (text, link) => {
       if (messagesEmpty) {
         messagesEmpty.style.display = "none";
       }
@@ -258,7 +262,18 @@
       tag.className = "tag";
       tag.textContent = "info";
       line.appendChild(tag);
-      line.append(` ${text}`);
+      if (link) {
+        const body = document.createElement("span");
+        const anchor = document.createElement("a");
+        anchor.href = link;
+        anchor.target = "_blank";
+        anchor.rel = "noopener";
+        anchor.textContent = link.replace(/^https:\/\/arxiv\.org\/abs\//, "arXiv:");
+        body.append(` ${text} `, anchor);
+        line.append(body);
+      } else {
+        line.append(` ${text}`);
+      }
       messagesList?.appendChild(line);
     };
 
@@ -300,7 +315,7 @@
       executed.set(lineEl, token);
       clearScheduled(lineEl);
       const timeoutId = setTimeout(() => {
-        addMessage(entry.message);
+        addMessage(entry.message, entry.link);
         if (entry.open) {
           if (entry.sameTab) {
             window.location.href = entry.open;
